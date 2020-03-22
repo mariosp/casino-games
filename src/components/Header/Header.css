@@ -1,3 +1,12 @@
-.navbar-color{
-    background-color: #373737;
+.navbar{
+    background-color: #373737!important;
+    padding: 0 15px;
+    /*height: 50px;*/
+}
+
+.navlink {
+    color: #ffff!important;
+}
+.navlink:hover {
+    background: #8DC63F;
 }

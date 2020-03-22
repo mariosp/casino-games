@@ -4,21 +4,19 @@ import getApi from "../../shared/api-service";
 import Loading from "../Loading/Loading";
 
 const Main = () => {
-    const [games, setGames] = useState([]);
-    const [categories, setCategories] = useState([]);
+    const [data, setData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
 
-    // useEffect(()=> {
-    //     getApi().then( ({games,categories}) => {
-    //         console.log(categories)
-    //         setCategories(categories);
-    //         setGames(games);
-    //         setIsLoading(false);
-    //     });
-    // }, []);
+    useEffect(()=> {
+        getApi().then( ({games,categories}) => {
+            setData({games,categories});
+            setIsLoading(false);
+        });
+    }, []);
+    console.log(isLoading)
     return !isLoading?
         <div>
-            <Header/>
+            <Header categories={data.categories}/>
         </div>
         :
         <Loading/>
