@@ -1,5 +1,17 @@
-const getApi = async () => {
-    const res = await fetch('https://test-api.ginbits.com/23a09e35581fa0e82ab3cbfb853784da/v1/games.json');
+const api = process.env.SERVER_ADDRESS?
+    `http://${process.env.SERVER_ADDRESS}:${process.env.PORT}`
+    :
+    `http://localhost:8080` ;
+
+export const getApiJackpots = async () => {
+    const res = await fetch(api +'/api/getjackpots');
+    const result = await res.json();
+    return result;
+};
+
+ export const getApi = async () => {
+    // const res = await fetch('https://test-api.ginbits.com/23a09e35581fa0e82ab3cbfb853784da/v1/games.json');
+    const res = await fetch(api +'/api/getgames');
     const result = await res.json();
 
     const filterCategories = [];
@@ -53,5 +65,3 @@ const getCategories = (filterCategories) => {
 
     return newCategories;
 };
-
-export default getApi;

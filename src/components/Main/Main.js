@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Route, Switch} from "react-router"
 import {BrowserRouter as Router, Redirect} from "react-router-dom"
 import Header from "../Header/Header";
-import getApi from "../../shared/api-service";
+import {getApi} from "../../shared/api-service";
 import Loading from "../Loading/Loading";
 import Games from "../Games/Games";
 
@@ -16,7 +16,7 @@ const Main = () => {
             setIsLoading(false);
         });
     }, []);
-    console.log(isLoading)
+
     return !isLoading?
         <Router>
             <Header categories={data.categories}/>

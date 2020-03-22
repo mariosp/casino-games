@@ -21,8 +21,6 @@ const Game = ({game, category, jackpot = null}) => {
 
     },[jackpot]);
     const onError = () => setImgError(true);
-    console.log("RENDER AGAIN")
-
     const jackpotToPounds = jackpot && new Intl.NumberFormat('en-UK', { style: 'currency', currency: 'GBP' }).format(jackpot.amount);
     return(
         <div className="card-wrapper" >
