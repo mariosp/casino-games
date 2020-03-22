@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require('path');
-const publicPath = path.join(__dirname, '..', 'public');
+const publicPath = path.join(__dirname, '..', 'build');
 const fetch = require('node-fetch');
 const JACKPOTS = require("./jackpots");
 const cors = require('cors');
@@ -12,6 +12,9 @@ app.options('*', cors());
 
 const port = process.env.PORT || 8080;
 const serverAdress = process.env.SERVER_ADDRESS || 'localhost';
+
+// Serve static files from the React app
+app.use(express.static(publicPath));
 
 
 app.get('/api/getgames', async (req, res) => {
