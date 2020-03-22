@@ -28,7 +28,7 @@
     border: 5px solid #648a30;
 }
 
-ribbon span {
+.ribbon span {
     position: absolute;
     display: block;
     width: 100px;
