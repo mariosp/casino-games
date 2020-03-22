@@ -7,7 +7,6 @@ import { NavLink as NavLinkRouter } from "react-router-dom";
 
 const Header = ({categories}) => {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
 
     const renderNavBarItems = (categories)=> {

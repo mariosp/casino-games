@@ -19,12 +19,11 @@ export const getApiJackpots = async () => {
         game.categories.forEach(category=> filterCategories.includes(category) || filterCategories.push(category) )
     });
 
-    console.log(filterCategories)
     return {
         games: result,
         categories: getCategories(filterCategories)
     }
-}
+};
 
 const getCategories = (filterCategories) => {
     const moreCategories = [];
