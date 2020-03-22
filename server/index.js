@@ -1,4 +1,6 @@
 const express = require("express");
+const path = require('path');
+const publicPath = path.join(__dirname, '..', 'public');
 const fetch = require('node-fetch');
 const JACKPOTS = require("./jackpots");
 const cors = require('cors');
@@ -10,12 +12,6 @@ app.options('*', cors());
 
 const port = process.env.PORT || 8080;
 const serverAdress = process.env.SERVER_ADDRESS || 'localhost';
-
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", process.env.SERVER_ADDRESS); // update to match the domain you will make the request from
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// });
 
 
 app.get('/api/getgames', async (req, res) => {
@@ -37,6 +33,10 @@ app.get('/api/getjackpots',(req, res) => {
     const result = JACKPOTS;
     const newResult = getSomeRandomJackpots(result);
     res.status(200).send(newResult);
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 app.listen(port, () => console.log(`Server running on http://${serverAdress}:${port}`));
