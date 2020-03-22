@@ -3,7 +3,7 @@
 }
 
 .container-wrapper{
-    padding: 0;
+    padding: 0 10%;
 }
 
 @media (min-device-width: 575px) {

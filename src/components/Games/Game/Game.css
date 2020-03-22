@@ -1,6 +1,6 @@
 .card-wrapper{
-    /*width:20%;*/
-    /*height: 20%;*/
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
@@ -8,6 +8,13 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+
+.card-image-fallback{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: #8DC63F;
 }
 
 .icon-box{
