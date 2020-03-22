@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./Game.css";
 import CaptionBox from "../CaptionBox/CaptionBox";
 import PlayBox from "../PlayBox/PlayBox";
@@ -10,11 +10,20 @@ const getRibbonCaption = (game)=> {
     else return null;
 };
 
-const Game = ({game, category}) => {
+const Game = ({game, category, jackpot = null}) => {
     const [imgError, setImgError] = useState(false);
+    const [showRibbon, setRibbon] = useState(null);
+    useEffect(()=>{
+       setRibbon(category !== "topgames" && category !=="newgames"? getRibbonCaption(game) : null);
+    },[category]);
 
-    const showRibbon = category !== "topgames" && category !=="newgames"? getRibbonCaption(game) : null;
+    useEffect(()=> {
+
+    },[jackpot]);
     const onError = () => setImgError(true);
+    console.log("RENDER AGAIN")
+
+    const jackpotToPounds = jackpot && new Intl.NumberFormat('en-UK', { style: 'currency', currency: 'GBP' }).format(jackpot.amount);
     return(
         <div className="card-wrapper" >
             {
@@ -23,7 +32,7 @@ const Game = ({game, category}) => {
                 :
                 <div className="card-image-fallback"></div>
             }
-            <CaptionBox caption={game.name} top/>
+            { jackpotToPounds && <CaptionBox caption={jackpotToPounds} top/>}
             <PlayBox>
                 <CaptionBox caption={game.name}/>
             </PlayBox>
