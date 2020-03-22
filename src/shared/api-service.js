@@ -1,4 +1,5 @@
-const api = process.env.NODE_ENV?
+
+const api = !process.env.NODE_ENV === "development" ?
     `${window.location.origin}`
     :
     `http://localhost:8080` ;

@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+Casino Games
+</h1>
 
-## Available Scripts
+<p align="center">React.js - Express<p>
 
-In the project directory, you can run:
+### A simple responsive website with casino games
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### `npm test`
+> You need to have Nodejs installed to run the project locally
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation and running
 
-### `npm run build`
+Install dependencies
+```sh
+$ npm install
+$ cd server && npm install
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run the server and client app
+```sh
+$ cd server && npm start
+$ npm run dev
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Test the app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can preview the app on heroku
 
-### `npm run eject`
+[casino-games-app](https://casino-games-app.herokuapp.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ ## Application Screenshots
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Dektop
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![desktop](https://user-images.githubusercontent.com/3619970/77266676-ce51e300-6ca8-11ea-8edd-825cae3d843a.PNG)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Mobile
 
-## Learn More
+![mobile](https://user-images.githubusercontent.com/3619970/77266685-d90c7800-6ca8-11ea-94f0-389de2dcc896.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
