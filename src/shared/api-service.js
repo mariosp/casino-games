@@ -1,5 +1,5 @@
-const api = process.env.SERVER_ADDRESS?
-    `http://${process.env.SERVER_ADDRESS}:${process.env.PORT}`
+const api = process.env.NODE_ENV?
+    `${window.location.origin}`
     :
     `http://localhost:8080` ;
 
