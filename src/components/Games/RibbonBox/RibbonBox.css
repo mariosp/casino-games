@@ -28,7 +28,7 @@
     border: 5px solid #648a30;
 }
 
-span {
+ribbon span {
     position: absolute;
     display: block;
     width: 100px;
@@ -41,7 +41,6 @@ span {
     text-align: center;
 }
 
-/* top right*/
 .ribbon-top-right {
     top: -5px;
     right: -5px;
