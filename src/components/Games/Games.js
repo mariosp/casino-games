@@ -11,7 +11,7 @@ const Games = ({data}) => {
 
     const renderGameItems =  filteredGames.map(game => (
             <Col key={game.id} className="column-wrapper" xs="12" sm="6" md="4" lg="3">
-                <Game game={game}/>
+                <Game game={game} category={category}/>
             </Col>
         )
     );

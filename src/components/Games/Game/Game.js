@@ -4,9 +4,16 @@ import CaptionBox from "../CaptionBox/CaptionBox";
 import PlayBox from "../PlayBox/PlayBox";
 import RibbonBox from "../RibbonBox/RibbonBox";
 
-const Game = ({game}) => {
+const getRibbonCaption = (game)=> {
+    if(game.categories.includes("top")) return "top";
+    else if(game.categories.includes("new")) return "new";
+    else return null;
+};
+
+const Game = ({game, category}) => {
     const [imgError, setImgError] = useState(false);
 
+    const showRibbon = category !== "topgames" && category !=="newgames"? getRibbonCaption(game) : null;
     const onError = () => setImgError(true);
     return(
         <div className="card-wrapper" >
@@ -20,7 +27,7 @@ const Game = ({game}) => {
             <PlayBox>
                 <CaptionBox caption={game.name}/>
             </PlayBox>
-            <RibbonBox caption={"TOP"} />
+            {showRibbon && <RibbonBox caption={showRibbon} color={showRibbon==="top"? "primary": "secondary"}/>}
         </div>
     )
 };
