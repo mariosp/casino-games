@@ -1,0 +1,79 @@
+.ribbon-primary {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    position: absolute;
+}
+.ribbon-primary::before,
+.ribbon-primary::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid #baa9a9;
+}
+
+.ribbon-secondary {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    position: absolute;
+}
+.ribbon-secondary::before,
+.ribbon-secondary::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid #648a30;
+}
+
+span {
+    position: absolute;
+    display: block;
+    width: 100px;
+    padding: 7px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    font-size: 12px;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* top right*/
+.ribbon-top-right {
+    top: -5px;
+    right: -5px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+}
+.ribbon-top-right::before {
+    top: 0;
+    left: 0;
+}
+.ribbon-top-right::after {
+    bottom: 0;
+    right: 0;
+}
+.ribbon-top-right span {
+    left: -3px;
+    top: 10px;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.ribbon-span-color-primary{
+    background: rgb(186,169,169);
+    background: linear-gradient(90deg, rgba(186,169,169,1) 0%, rgba(252,252,252,1) 35%, rgba(209,192,192,1) 100%);
+    color: #8DC63F;
+}
+
+.ribbon-span-color-secondary{
+    background: rgb(134,187,61);
+    background: linear-gradient(90deg, rgba(134,187,61,1) 0%, rgba(210,241,167,1) 100%);
+    color: #ffff;
+}

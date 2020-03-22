@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import "./Game.css";
 import CaptionBox from "../CaptionBox/CaptionBox";
+import PlayBox from "../PlayBox/PlayBox";
+import RibbonBox from "../RibbonBox/RibbonBox";
 
 const Game = ({game}) => {
     const [imgError, setImgError] = useState(false);
@@ -8,17 +10,17 @@ const Game = ({game}) => {
     const onError = () => setImgError(true);
     return(
         <div className="card-wrapper" >
-            {!imgError? <img src={game.image} className="card-image" alt={game.name} onError={onError} />
-                : <div className="card-image-fallback"></div>
+            {
+                !imgError?
+                <img src={game.image} className="card-image" alt={game.name} onError={onError} />
+                :
+                <div className="card-image-fallback"></div>
             }
             <CaptionBox caption={game.name} top/>
-                <div className="image-caption">
-                <div className="icon-box">
-                    <div className="background-box"></div>
-                    <i className="fa fa-play icon-style"></i>
-                </div>
+            <PlayBox>
                 <CaptionBox caption={game.name}/>
-            </div>
+            </PlayBox>
+            <RibbonBox caption={"TOP"} />
         </div>
     )
 };
