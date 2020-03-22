@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./Header.css";
-import {Collapse, Nav, Navbar, NavbarToggler, NavItem} from "reactstrap";
-import NavLink from "reactstrap/es/NavLink";
+import {Collapse, Nav, Navbar, NavbarToggler, NavItem, NavLink} from "reactstrap";
+import { NavLink as NavLinkRouter } from "react-router-dom";
 
 
 
@@ -13,7 +13,7 @@ const Header = ({categories}) => {
     const renderNavBarItems = (categories)=> {
         return categories.map(category=> (
             <NavItem key={category.name}>
-                <NavLink href="/" className="navlink">{category.name}</NavLink>
+                <NavLink tag={NavLinkRouter} to={`/${category.link}`} activeClassName="active-navlink" className="navlink">{category.name}</NavLink>
             </NavItem>
         ))
     };

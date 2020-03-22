@@ -1,0 +1,14 @@
+.column-wrapper{
+    padding: 15px 5px;
+}
+
+.container-wrapper{
+    padding: 0;
+}
+
+@media (min-device-width: 575px) {
+    .container-wrapper {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

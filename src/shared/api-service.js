@@ -18,14 +18,17 @@ const getCategories = (filterCategories) => {
     const moreCategories = [];
     const otherCategory = {
         name: 'Other',
+        link: 'other',
         categories: []
     };
     const topCategory = {
         name: 'Top Games',
+        link: 'topgames',
         categories: []
     };
     const newCategory = {
         name: 'New games',
+        link: 'newgames',
         categories: []
     };
 
@@ -36,6 +39,7 @@ const getCategories = (filterCategories) => {
         if (category === "ball" || category === "virtual" || category === "fun") return  otherCategory.categories.push(category);
         return moreCategories.push({
             name: category[0].toUpperCase() + category.slice(1),
+            link: category.replace(/\s+/g, '').toLowerCase(),
             categories: [category]
         });
     });

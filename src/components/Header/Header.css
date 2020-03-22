@@ -2,11 +2,19 @@
     background-color: #373737!important;
     padding: 0 15px;
     /*height: 50px;*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .navlink {
     color: #ffff!important;
 }
 .navlink:hover {
+    background: #8DC63F;
+}
+
+.active-navlink {
     background: #8DC63F;
 }
