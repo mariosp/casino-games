@@ -1,5 +1,4 @@
-console.log(process.env.NODE_ENV)
-const api = !process.env.NODE_ENV === "development" ?
+const api = (process.env.NODE_ENV === "production") ?
     `${window.location.origin}`
     :
     `http://localhost:8080` ;
